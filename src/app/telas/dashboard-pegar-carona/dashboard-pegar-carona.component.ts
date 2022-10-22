@@ -7,8 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPegarCaronaComponent implements OnInit {
 
+  public ajuda = {
+    combustivel: {
+      ativo: false,
+      href: '../../../assets/icon/combustivel-inativo.png'
+    },
+    estacionamento: {
+      ativo: false,
+      href: '../../../assets/icon/estacionamento-inativo.png'
+    }
+  }
+
   constructor() { }
 
   ngOnInit() {}
+
+  pausarCarona(){
+    //document.getElementById('status-carona').classList;
+  }
 
 }

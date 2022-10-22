@@ -10,6 +10,39 @@
 
 <ion-content><!--INICIO CORPO-->
   <div class="container" style="overflow: hidden;"> 
-    <!--Construir tela aqui-->
+    <ion-card>
+      <ion-card-content>
+        <h1>Olá <strong>Usuário</strong></h1>
+
+        <p>
+          <strong> Status: </strong> 
+          <span id="status-carona" class="aguardando">  Aguardando carona </span>
+        </p>
+        
+        <strong>Endereço:</strong>
+
+        <p>
+          Avenida Tal, N°: 000, Taboão da Serra SP 00000-000  
+        </p>
+
+        <strong>Ajudas:</strong>
+
+        <div class="campo-ajuda">
+          <img [src]="ajuda.combustivel.href" alt="Icone que representa combustivel">
+
+          <label>Ajuda com combustível</label>
+        </div>
+    
+        <div class="campo-ajuda">
+          <img [src]="ajuda.estacionamento.href" alt="Icone que representa estacionamento">
+    
+          <label>Ajuda com estacionamento</label>
+        </div>
+
+        <ion-button color="primary" expand="block">Atualizar dados</ion-button>
+
+        <ion-button color="warning" expand="block" (click)="pausarCarona()">Pausar carona</ion-button>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content><!--FIM CORPO-->
