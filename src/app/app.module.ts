@@ -7,6 +7,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { FormsModule } from '@angular/forms';
+
 // Declaração dos compoentes desenvolvidos
 import { CadastroDarCaronaComponent } from './telas/cadastro-dar-carona/cadastro-dar-carona.component';
 import { CadastroPegarCaronaComponent } from './telas/cadastro-pegar-carona/cadastro-pegar-carona.component';
@@ -25,7 +27,7 @@ import { ListaStatusDeCaronaComponent } from './telas/lista-status-de-carona/lis
     ListaOpcoesDeCaronaComponent,
     ListaStatusDeCaronaComponent
   ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

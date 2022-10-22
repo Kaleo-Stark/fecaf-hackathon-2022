@@ -1,5 +1,7 @@
 {
   "name": "fecaf-hackathon-2022",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

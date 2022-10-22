@@ -12,32 +12,32 @@
   <div class="container" style="overflow: hidden;"> 
     <ion-item>
       <ion-label position="stacked">Nome</ion-label>
-      <ion-input placeholder="Ex: José da Silva"></ion-input>
+      <ion-input [(ngModel)]="dadosPegarCarona.nome" (keyup)="validadarDados()" placeholder="Ex: José da Silva"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Seu RA:</ion-label>
-      <ion-input placeholder="Ex: 0000"></ion-input>
+      <ion-input [(ngModel)]="dadosPegarCarona.ra" (keyup)="validadarDados()" placeholder="Ex: 0000"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Seu Endereço - Cep</ion-label>
-      <ion-input placeholder="Ex: 00000-000"></ion-input>
+      <ion-input [(ngModel)]="dadosPegarCarona.cep" (keyup)="validadarDados()" placeholder="Ex: 00000-000"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Seu Endereço - Rua</ion-label>
-      <ion-input placeholder="Ex: Avenida Vida Nova"></ion-input>
+      <ion-input [(ngModel)]="dadosPegarCarona.rua" (keyup)="validadarDados()" placeholder="Ex: Avenida Vida Nova"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Seu Endereço - Número</ion-label>
-      <ion-input placeholder="Ex: 000"></ion-input>
+      <ion-input [(ngModel)]="dadosPegarCarona.numero" (keyup)="validadarDados()" placeholder="Ex: 000"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Seu Endereço - Cidade</ion-label>
-      <ion-input placeholder="Ex: Taboão da Serra"></ion-input>
+      <ion-input [(ngModel)]="dadosPegarCarona.cidade" (keyup)="validadarDados()" placeholder="Ex: Taboão da Serra"></ion-input>
     </ion-item> 
 
     <div class="campo-ajuda" (click)="ativarIcone('combustivel')">
@@ -56,7 +56,7 @@
 
 <ion-footer> <!--INICIO TOPO-->
   <ion-toolbar>
-    <ion-button expand="block" color="success" class="button-footer" disabled="true">
+    <ion-button expand="block" color="success" class="button-footer" [disabled]="bloquearProsseguir" (click)="irParaDashboardPegarCarona()">
       Prosseguir
     </ion-button>
   </ion-toolbar>

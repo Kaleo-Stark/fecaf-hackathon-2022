@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: 'app-cadastro-pegar-carona',
@@ -6,39 +9,62 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastro-pegar-carona.component.scss'],
 })
 export class CadastroPegarCaronaComponent implements OnInit {
+  public bloquearProsseguir = true;
 
   public ajuda = {
     combustivel: {
-      ativo: false,
       href: '../../../assets/icon/combustivel-inativo.png'
     },
     estacionamento: {
-      ativo: false,
       href: '../../../assets/icon/estacionamento-inativo.png'
     }
-  }
+  };
 
-  constructor() { }
+  public dadosPegarCarona = {
+    nome: '',
+    ra: '',
+    cep: '',
+    rua: '',
+    numero: '',
+    cidade: '',
+    ajudas: {
+      combustivel: false,
+      estacionamento: false
+    }
+  };
 
-  ngOnInit() {}
+  constructor(private router: Router) {}
+
+  async ngOnInit() {}
 
   ativarIcone(tipoAjuda){
     if(tipoAjuda === 'combustivel'){
-      this.ajuda.combustivel.ativo = !this.ajuda.combustivel.ativo;
+      this.dadosPegarCarona.ajudas.combustivel = !this.dadosPegarCarona.ajudas.combustivel;
 
-      if(this.ajuda.combustivel.ativo){
+      if(this.dadosPegarCarona.ajudas.combustivel){
         this.ajuda.combustivel.href = '../../../assets/icon/combustivel-ativo.png';
       }else{
         this.ajuda.combustivel.href = '../../../assets/icon/combustivel-inativo.png';
       }
     }else{
-      this.ajuda.estacionamento.ativo = !this.ajuda.estacionamento.ativo;
+      this.dadosPegarCarona.ajudas.estacionamento = !this.dadosPegarCarona.ajudas.estacionamento;
 
-      if(this.ajuda.estacionamento.ativo){
+      if(this.dadosPegarCarona.ajudas.estacionamento){
         this.ajuda.estacionamento.href = '../../../assets/icon/estacionamento-ativo.png';
       }else{
         this.ajuda.estacionamento.href = '../../../assets/icon/estacionamento-inativo.png';
       }
     }
+  }
+
+  validadarDados(){
+    if(this.dadosPegarCarona.nome && this.dadosPegarCarona.ra && this.dadosPegarCarona.cep &&
+      this.dadosPegarCarona.rua && this.dadosPegarCarona.numero && this.dadosPegarCarona.cidade )
+    { this.bloquearProsseguir = false;} else
+    { this.bloquearProsseguir = true;}
+  }
+
+  async irParaDashboardPegarCarona(){
+    this.router.navigate(['dashboard-pegar-carona']);
   }
 }

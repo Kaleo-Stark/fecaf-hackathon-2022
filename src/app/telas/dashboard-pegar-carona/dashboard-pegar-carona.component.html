@@ -12,17 +12,20 @@
   <div class="container" style="overflow: hidden;"> 
     <ion-card>
       <ion-card-content>
-        <h1>Olá <strong>Usuário</strong></h1>
+        <h1>Olá <strong>{{ dadosPegarCarona.nome }}</strong></h1>
 
         <p>
           <strong> Status: </strong> 
-          <span id="status-carona" class="aguardando">  Aguardando carona </span>
+          <span id="status-carona" [ngClass]="dadosPegarCarona.status">  Aguardando carona </span>
         </p>
         
         <strong>Endereço:</strong>
 
         <p>
-          Avenida Tal, N°: 000, Taboão da Serra SP 00000-000  
+          {{ dadosPegarCarona.rua }}
+          {{ dadosPegarCarona.numero }} -
+          {{ dadosPegarCarona.cidade }} - 
+          {{ dadosPegarCarona.cep }}
         </p>
 
         <strong>Ajudas:</strong>
@@ -41,7 +44,7 @@
 
         <ion-button color="primary" expand="block">Atualizar dados</ion-button>
 
-        <ion-button color="warning" expand="block" (click)="pausarCarona()">Pausar carona</ion-button>
+        <ion-button id="btn-pausa" color="warning" expand="block" (click)="pausarCarona()">Pausar carona</ion-button>
       </ion-card-content>
     </ion-card>
   </div>
