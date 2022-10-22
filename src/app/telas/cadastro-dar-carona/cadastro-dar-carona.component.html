@@ -10,8 +10,12 @@
 
 <ion-content><!--INICIO CORPO-->
   <div class="container" style="overflow: hidden;"> 
+    <p class="sub-titulo">
+      Preencha seus dados...
+    </p>
+
     <ion-item>
-      <ion-label position="stacked">Nome</ion-label>
+      <ion-label position="stacked">Seu Nome</ion-label>
       <ion-input placeholder="Ex: José da Silva"></ion-input>
     </ion-item>
 
@@ -39,7 +43,32 @@
       <ion-label position="stacked">Seu Endereço - Cidade</ion-label>
       <ion-input placeholder="Ex: Taboão da Serra"></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-select interface='popover' placeholder='Lugares disponíveis'>
+        <ion-select-option value='1'>1</ion-select-option>
+        <ion-select-option value='2'>2</ion-select-option>
+        <ion-select-option value='3'>3</ion-select-option>
+        <ion-select-option value='4'>4</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-select interface='popover' placeholder='Distância de deslocamento'>
+        <ion-select-option value='1'>1 km</ion-select-option>
+        <ion-select-option value='2'>2 km</ion-select-option>
+        <ion-select-option value='3'>3 km</ion-select-option>
+        <ion-select-option value='4'>4 km</ion-select-option>
+        <ion-select-option value='5'>5 km</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <p class="texto">
+      Distância de deslocamento, é a distância máxima em kilometros que você está disposto a se deslocar do seu trajeto.
+    </p>
+
   </div>
+
 </ion-content><!--FIM CORPO-->
 
 <ion-footer> <!--INICIO TOPO-->

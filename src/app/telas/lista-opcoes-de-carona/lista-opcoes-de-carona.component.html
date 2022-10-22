@@ -9,7 +9,51 @@
 </ion-header> <!--FIM TOPO-->
 
 <ion-content><!--INICIO CORPO-->
-  <div class="container" style="overflow: hidden;"> 
-    <!--Construir tela aqui-->
+  <div class="container box-principal" style="overflow: hidden;"> 
+      <ion-card class="topo-card">
+        <ion-card-content>
+          <strong>Lugares disponívies:</strong> 2/4
+        </ion-card-content>
+      </ion-card>
+    
+      <ion-card class="topo-card">
+        <ion-card-content>
+          <p class="sub-titulo2">
+            <strong>Informações carona</strong>
+          </p> 
+
+          <p>
+            <strong>Nome: </strong>Ana Beatriz
+          </p>
+          
+          <p>
+            <strong>Endereço: </strong><br>
+            Avenida Tal, nº 000<br>
+            Taboão da Serra - SP<br>
+            Cep: 00000-000 
+          </p>
+          
+          <div class="beneficios">
+            <img class="imagem" [src]="ajuda.combustivel.href" alt="Icone que representa combustivel">
+
+            <label>Ajuda com combustivel</label>
+          </div>
+          
+          <div class="beneficios">
+            <img class="imagem" [src]="ajuda.estacionamento.href" alt="Icone que representa estacionamento">
+
+            <label>Ajuda com estacionamento</label>
+          </div>
+
+          <ion-toolbar>
+            <ion-button class="botao" expand="block" color="success" class="button-footer" disabled="true">
+              Oferecer carona!
+            </ion-button>
+          </ion-toolbar>
+
+        </ion-card-content>
+      </ion-card>
+
+      
   </div>
 </ion-content><!--FIM CORPO-->
